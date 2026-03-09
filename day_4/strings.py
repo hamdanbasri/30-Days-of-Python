@@ -108,7 +108,7 @@
 
 # # QUESTION 22 - determine the position of the last occurrence of l in Coding For All People.
 # word = 'Coding For All People'
-# print(word.rfind('i'))
+# print(word.rfind('l'))
 
 # # QUESTION 23
 # word = 'You cannot end a sentence with because because because is a conjunction'
