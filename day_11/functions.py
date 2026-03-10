@@ -73,13 +73,100 @@ while True:
     except ValueError:
         print("Invalid input! Please enter a whole number (e.g., 5).")
 
-print(f'The season is: {check_season(month_val)}')
+print(f'The season is: {check_season(month_val)}\n')
+
 # QUESTION 6
+print('QUESTION 6')
+slope_output = 0
+def calculate_slope(x1, x2, y1, y2):
+    slope = (y2 - y1) / (x2 - x1)
+    slope_output = slope
+    return slope
+
+print(f'The slope is valued at: {calculate_slope(20,2,33,4)}\n')
+
 # QUESTION 7
+print('QUESTION 7')
+def solve_quadratic_eqn(a, b, c):
+    if a == 0:
+        return "This is a linear equation, not quadratic (a cannot be 0)."
+
+    # Calculate the discriminant
+    d = b**2 - 4*a*c
+    
+    if d > 0:
+        # Two real solutions
+        sol1 = (-b + (d**0.5)) / (2 * a)
+        sol2 = (-b - (d**0.5)) / (2 * a)
+        return {sol1, sol2}
+    
+    elif d == 0:
+        # One real solution
+        sol = -b / (2 * a)
+        return {sol}
+    
+    else:
+        # For complex numbers, we use the absolute value of d
+        # and Python's 'j' for the imaginary part
+        real_part = -b / (2 * a)
+        imag_part = (abs(d)**0.5) / (2 * a)
+        return {complex(real_part, imag_part), complex(real_part, -imag_part)}
+
+# Example: x^2 - 3x + 2 = 0
+print(f"Solutions: {solve_quadratic_eqn(1, -3, 2)}\n")
+
 # QUESTION 8
+print('QUESTION 8')
+
+def print_list(my_list):
+    for element in my_list:
+        print(element)
+
+tech_stack = ['Python', 'JavaScript', 'SQL', 'HTML']
+print(f'{print_list(tech_stack)}\n')
+
 # QUESTION 9
+print('QUESTION 9')
+def reverse_list(*numbers):
+    num_list = list(numbers)
+    num_list.reverse()
+    return num_list
+
+print(reverse_list(1, 2, 3, 4, 5))
+print(f'{reverse_list("A", "B", "C")}\n') 
+
 # QUESTION 10
+print('QUESTION 10')
+def capitalize_list_items(original_list):
+    capitalized_list = []
+    for item in original_list:
+        capitalized_list.append(item.capitalize())
+    return capitalized_list
+
+fruits = ['banana', 'orange', 'apple', 'lemon']
+print(f'{capitalize_list_items(fruits)}\n')
+
 # QUESTION 11
+print('QUESTION 11')
+food_stuff = ['Potato', 'Tomato', 'Mango', 'Milk']
+numbers = [2, 3, 7, 9]
+
+def add_item(target_list, item_to_add):
+    # 1. Add the item to the specific list passed in
+    target_list.append(item_to_add)
+    
+    # 2. Return both lists as a tuple
+    return food_stuff, numbers
+
+# Now, when you call it, you get both back
+updated_food, updated_nums = add_item(food_stuff, 'Meat')
+print(f"Food: {updated_food}")
+print(f"Numbers: {updated_nums}")
+
+# Calling it again with the numbers list
+add_item(numbers, 5)
+
+
 # QUESTION 12
 # QUESTION 13
 # QUESTION 14
