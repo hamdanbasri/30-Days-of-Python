@@ -3,17 +3,17 @@
 # EXERCISE LEVEL 1
 
 # QUESTION 1
+print('QUESTION 1')
 def add_two_numbers(num1, num2):
     total = num1 + num2
     return total
-print('QUESTION 1')
 print(f'Adding two numbers: {add_two_numbers(1,2)}\n')
 
 # QUESTION 2
+print('QUESTION 2')
 def area_of_circle(radius):
     area = 3.14 * radius * radius
     return area
-print('QUESTION 2')
 print(f'Area of Circle: {area_of_circle(40)}\n')
 
 # QUESTION 3
@@ -161,13 +161,54 @@ def add_item(target_list, item_to_add):
 # Now, when you call it, you get both back
 updated_food, updated_nums = add_item(food_stuff, 'Meat')
 print(f"Food: {updated_food}")
-print(f"Numbers: {updated_nums}")
-
-# Calling it again with the numbers list
 add_item(numbers, 5)
-
+print(f"Numbers: {updated_nums}\n")
 
 # QUESTION 12
+print('QUESTION 12')
+food_stuff = ['Potato', 'Tomato', 'Mango', 'Milk']
+numbers = [2, 3, 7, 9]
+
+def remove_item(target_list, item_to_remove):
+    target_list.remove(item_to_remove)
+
+    return food_stuff, numbers
+
+removed_food, removed_nums = remove_item(food_stuff, 'Mango')
+print(f'Food: {removed_food}')
+remove_item(numbers,3)
+print(f'Numbers: {removed_nums}\n')
+
 # QUESTION 13
+def sum_of_numbers(n):
+    total = 0
+    # range(1, 6) will give us 1, 2, 3, 4, 5
+    for i in range(1, n + 1):
+        total += i
+    return total
+
+print(sum_of_numbers(5))   # Output: 15
+print(sum_of_numbers(10))  # Output: 55
+print(sum_of_numbers(100)) # Output: 5050
+print('\n')
+
 # QUESTION 14
+print('QUESTION 14')
+def sum_of_odds(n):
+    total = 0
+    for i in range(1, n + 1, 2):
+        total += i
+    return total
+
+print(sum_of_odds(5))
+print('\n')
+
 # QUESTION 15
+print('QUESTION 15')
+def sum_of_even(n):
+    total = 0
+    for i in range(2, n + 1, 2):
+        total += i
+    return total
+
+print(sum_of_even(5))
