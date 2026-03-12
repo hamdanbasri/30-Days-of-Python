@@ -404,6 +404,8 @@ print(evens_and_odds(100))
 ```
 I was almost there, but again I was stuck because of the two return statement. Eventhough I was so close for getting only the even number I needed the help of Gemini. I need to understand further why am I returning it as a tuple.
 ```
+
+```
 # QUESTION 1
 evens = []
 odds = []
@@ -431,11 +433,86 @@ print(f'The number of odds are: {len(all_odds)}')
 ## QUESTION 2
 Call your function factorial, it takes a whole number as a parameter and it return a factorial of the number
 
+### THOUGHT PROCESS
+```
+I have no idea what factorial is until I google it.
+The Factorial of a whole number 'n' is defined as the product of that number with every whole number less than or equal to 'n' till 1. For example, the factorial of 4 is 4 × 3 × 2 × 1, which is equal to 24. It is represented using the symbol '!'
+
+e.g., 5! = 5 x 4 x 3 x 2 x 1 = 120
+```
+#SOLUTION
+```
+print('QUESTION 2')
+
+def factorial(whole_number):
+    if whole_number < 0:
+        return "Factorial is not defined for negative numbers"
+    elif whole_number == 0:
+        return 1
+    else:
+        result = 1
+        for i in range(1, whole_number + 1):
+            result *= i
+        return result
+print(f'The factorial of the whole number is {factorial(6)}\n')
+```
+
 ## QUESTION 3
 Call your function is_empty, it takes a parameter and it checks if it is empty or not
 
+### THOUGHT PROCESS
+```
+The question is clear, but now at the back of my head is to compare if user_value != null. Now my question before I do this is, does python has a != null? Or != ''
+```
+### SOLUTION
+```
+To answer my own question, I discovered that in Python you can compare an empty value to None. However it was not showing it as empty as even when the user presses enter Python inteprates is as having a value of "". Gemini helps by telling me that in order to make sure that the value is empty, I can either just use not user_value or comparing the len(user_value) == 0. That makes a lot of sense. Also Gemini mentions that there might be a case where a user just inputs a spacebar, to avoid any unwanted output. It was recommended to strip the input so that it ignores spaces.
+```
+```
+print('QUESTION 3')
+user_value = input('Please input a value: ').strip()
+def is_empty(user_value):
+    if not user_value:
+        print('No value')
+    else:
+        print(f'The user inputs: {user_value}')
+    return user_value
+is_empty(user_value)
+```
+
 ## QUESTION 4
 Write different functions which take lists. They should calculate_mean, calculate_median, calculate_mode, calculate_range, calculate_variance, calculate_std (standard deviation).
+
+### THOUGHT PROCESS
+```
+In order to start I need to create a list_of_numbers = ['1','2','3','4','5']. 
+
+Now to be honest, I have no idea how to calculate any of this. So for my attempt, lets just go through the old ways of googling and stack overflow before asking Gemini to help with each functions.
+
+So below are my Google findings:
+
+MEAN
+To calculate the mean (average), add all the numbers in your data set together to find the sum, then divide that sum by the total count of numbers.
+Sum: 2 + 2 + 4 + 6 + 8 + 10 = 32
+
+MEDIAN
+To find the median, first order your data from lowest to highest. If there is an odd number of values, the median is the middle number. If there is an even number of values, the median is the average of the two middle numbers (sum them and divide by two)
+
+MODE
+The mode is the value that appears most frequently in a data set. To calculate it, list the data points, count the frequency of each, and identify the highest count. A data set can have one mode, multiple modes (bimodal/multimodal), or no mode if all numbers appear equally.
+
+RANGE
+The range in statistics is calculated by finding the difference between the highest (H) and lowest (L) values in a data set. Simply order the data, identify the maximum and minimum, and use the formula: Range = Highest Value - Lowest Value. It measures the spread of data but is highly sensitive to outliers.
+
+VARIANCE
+Variance measures data spread around the mean. Calculate it by finding the mean, subtracting the mean from each data point, squaring those differences, summing them, and dividing by the count of numbers (n) for a population, or n-1 for a sample.
+
+STD
+To calculate standard deviation, find the mean of the data, subtract the mean from each number and square the results, average these squared differences (divide by n-1 for sample, 
+N for population), and take the square root. A low standard deviation means data is close to the mean; a high one means it is spread out.
+```
+
+### SOLUTION
 
 ## QUESTION 5
 Write a function called greet which takes a default argument, name. If no argument is supplied it should print "Hello, Guest!", otherwise it should greet the person by name.
