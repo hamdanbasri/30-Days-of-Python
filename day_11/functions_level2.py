@@ -1,25 +1,26 @@
 # FUNCTIONS EXERCISE LEVEL 2
 
 # QUESTION 1
-even_list = []
-odd_list = []
-even_or_odd = 0
+evens = []
+odds = []
 
-def evens_and_odds(random_number):
-    if random_number > 0:
-        while even_or_odd < random_number:
-            even_or_odd += 1
-            even_or_odd % 2
-    # print(even_or_odd)
+def find_numbers(limit):
+    # Clear lists in case you run the function multiple times
+    evens.clear()
+    odds.clear()
+    
+    for i in range(limit + 1):
+        if i % 2 == 0:
+            evens.append(i)
+        else:
+            odds.append(i)
+    
+    # Return both as a tuple
+    return evens, odds
 
-    if even_or_odd == 0:
-        even_list.append(even_or_odd)
-        print(even_list)
-    else:
-        odd_list.append(even_or_odd)
-    return len(even_list)
+# Unpack the results into two separate variables
+all_evens, all_odds = find_numbers(100)
 
-print(f'The number of evens are: {len(even_list)}')
-print(f'The number of odds are: {len(odd_list)}')
-print(evens_and_odds(100))
+print(f'The number of evens are: {len(all_evens)}')
+print(f'The number of odds are: {len(all_odds)}')
 
