@@ -391,6 +391,16 @@ print(evens_and_odds(100))
 # The number of odds are 50.
 # The number of evens are 51.
 ```
+
+### THOUGHT PROCESS
+```
+1. I have to make sure the parameter only takes in a positive integer.
+2. Find the remainder of the parameter with % 2.
+3. If remainder is == 0 its an even number, else it is a negative.
+4. Identify the even number by putting them into two separate lists.
+5. Count the length of the list.
+```
+### SOLUTION
 ## QUESTION 2
 Call your function factorial, it takes a whole number as a parameter and it return a factorial of the number
 
