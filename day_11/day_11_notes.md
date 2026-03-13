@@ -405,7 +405,7 @@ print(evens_and_odds(100))
 I was almost there, but again I was stuck because of the two return statement. Eventhough I was so close for getting only the even number I needed the help of Gemini. I need to understand further why am I returning it as a tuple.
 ```
 
-```
+```python
 # QUESTION 1
 evens = []
 odds = []
@@ -441,7 +441,7 @@ The Factorial of a whole number 'n' is defined as the product of that number wit
 e.g., 5! = 5 x 4 x 3 x 2 x 1 = 120
 ```
 #SOLUTION
-```
+```python
 print('QUESTION 2')
 
 def factorial(whole_number):
@@ -468,7 +468,7 @@ The question is clear, but now at the back of my head is to compare if user_valu
 ```
 To answer my own question, I discovered that in Python you can compare an empty value to None. However it was not showing it as empty as even when the user presses enter Python inteprates is as having a value of "". Gemini helps by telling me that in order to make sure that the value is empty, I can either just use not user_value or comparing the len(user_value) == 0. That makes a lot of sense. Also Gemini mentions that there might be a case where a user just inputs a spacebar, to avoid any unwanted output. It was recommended to strip the input so that it ignores spaces.
 ```
-```
+```python
 print('QUESTION 3')
 user_value = input('Please input a value: ').strip()
 def is_empty(user_value):
@@ -513,6 +513,13 @@ N for population), and take the square root. A low standard deviation means data
 ```
 
 ### SOLUTION
+```
+This is hard, I have not been into this sort of mathematical calculation since my Diploma. 
+It is a good refresher, maybe I should do more of this kind of mathematical problems to solve.
+```
+```
+Refer to functions_level2.py for the solutions.
+```
 
 ## QUESTION 5
 Write a function called greet which takes a default argument, name. If no argument is supplied it should print "Hello, Guest!", otherwise it should greet the person by name.
@@ -523,6 +530,25 @@ greet("Alice")
 # "Hello, Alice!"
 ```
 
+### THOUGHT PROCESS
+```
+This sounds striaght forward, lets see if I can do this without any external help.
+```
+### SOLUTION
+```
+Just as I thought, it's the same approach as Question 3. Solved.
+```
+```python
+print('QUESTION 5')
+name = input('What is your name? ').strip()
+def greet(name):
+    if not name:
+        print('Hello, Guest!')
+    else:
+        print(f'Hello, {name}')
+    return name
+greet(name)
+```
 ## QUESTION 6
 Create a function called show_args to take an arbitrary number of named arguments and print their names and values.
 ```
@@ -530,6 +556,25 @@ show_args(name="Alice", age=30, city="New York")
 # Received: name: Alice, age: 30, city: New York
 show_args(name="Bob", pet="Fluffy, the bunny")
 # Received: name: Bob, pet: Fluffy, the bunny
+```
+
+### THOUGHT PROCESS
+```
+Arbritrary number of named arguments? What?
+Okay I found some example in the readme for Day 11 which is useful.
+So here is my solution.
+```
+
+### SOLUTION
+```python
+dict_1 = {"name":"Alice", "age":30, "city":"New York"}
+dict_2 = {"name":"Bob", "pet":"Fluffy, the bunny"}
+print('QUESTION 6')
+def show_args(**args):
+    for k, v in args.items():
+        print("Received:", k,":", v)
+show_args(**dict_1)
+show_args(**dict_2)
 ```
 # EXERCISES LEVEL 3
 ## QUESTION 1

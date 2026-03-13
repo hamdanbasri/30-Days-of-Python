@@ -89,6 +89,8 @@ def calculate_median(nums):
 result = calculate_median(list_of_numbers)
 print(f'Sorted list: {sorted(list_of_numbers)}')
 print(f'The median is: {result}\n')
+
+list_of_numbers = ['5','2','7','2','8','1']
     
 def calculate_mode(numbers):
     counts = {}
@@ -108,9 +110,76 @@ def calculate_mode(numbers):
     modes = [key for key, value in counts.items() if value == max_frequency]
     return modes
 
-print(f"The mode(s) are: {calculate_mode(list_of_numbers)}")
-# def calculate_range():
-# def calculate_variance():
-# def calculate_std():
+print(list_of_numbers)
+print(f"The mode(s) are: {calculate_mode(list_of_numbers)}\n")
 
+def calculate_range():
+    sorted_list = sorted(list_of_numbers)
+    print(sorted_list)
+    high = sorted_list[len(sorted_list)-1]
+    low = sorted_list[0]
+    print(f'The highest value is: {high}')
+    print(f'The lowest value is: {low}')
+    print(f'The range between the highest and lowest is: {int(high) - int(low)}\n')
+calculate_range()
+
+def calculate_variance(nums):
+    # 1. Convert strings to integers
+    clean_nums = [int(x) for x in nums]
+    n = len(clean_nums)
+    
+    # 2. Calculate the Mean (average)
+    mean = sum(clean_nums) / n
+    
+    # 3. Calculate sum of squared differences
+    # This is (x - mean)^2 for every number
+    squared_diff_sum = sum((x - mean) ** 2 for x in clean_nums)
+    
+    # 4. Divide by n (Population Variance)
+    variance = squared_diff_sum / n
+    return variance
+
+result = calculate_variance(list_of_numbers)
+print(f"The variance is: {result:.2f}\n")
+
+
+def calculate_std_dev(nums):
+    # 1. Convert strings to integers
+    clean_nums = [int(x) for x in nums]
+    n = len(clean_nums)
+    
+    # 2. Calculate the Mean
+    mean = sum(clean_nums) / n
+    
+    # 3. Calculate Variance
+    squared_diff_sum = sum((x - mean) ** 2 for x in clean_nums)
+    variance = squared_diff_sum / n
+    
+    # 4. Calculate Standard Deviation (Square root of variance)
+    std_dev = variance ** 0.5
+    return std_dev
+
+result = calculate_std_dev(list_of_numbers)
+print(f"The Standard Deviation is: {result:.2f}\n")
+
+# QUESTION 5
+print('QUESTION 5')
+name = input('What is your name? ').strip()
+def greet(name):
+    if not name:
+        print('Hello, Guest!')
+    else:
+        print(f'Hello, {name}\n')
+    return name
+greet(name)
+
+# QUESTION 6
+dict_1 = {"name":"Alice", "age":30, "city":"New York"}
+dict_2 = {"name":"Bob", "pet":"Fluffy, the bunny"}
+print('QUESTION 6')
+def show_args(**args):
+    for k, v in args.items():
+        print("Received:", k,":", v)
+show_args(**dict_1)
+show_args(**dict_2)
 
