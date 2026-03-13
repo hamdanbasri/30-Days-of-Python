@@ -88,10 +88,27 @@ def calculate_median(nums):
 
 result = calculate_median(list_of_numbers)
 print(f'Sorted list: {sorted(list_of_numbers)}')
-print(f'The median is: {result}')
-
+print(f'The median is: {result}\n')
     
-# def calculate_mode():
+def calculate_mode(numbers):
+    counts = {}
+    for num in numbers:
+        counts[num] = counts.get(num, 0) + 1
+    
+    if not counts:
+        return "List is empty, no mode."
+
+    max_frequency = max(counts.values())
+    
+    # Check if all elements appear only once (no distinct mode)
+    if max_frequency == 1 and len(set(numbers)) == len(numbers):
+        return "No unique mode found; all elements appear once."
+
+    # Find all elements with the maximum frequency
+    modes = [key for key, value in counts.items() if value == max_frequency]
+    return modes
+
+print(f"The mode(s) are: {calculate_mode(list_of_numbers)}")
 # def calculate_range():
 # def calculate_variance():
 # def calculate_std():
