@@ -1,0 +1,10 @@
+# DAY 12 - MODULES EXERCISES LEVEL 2
+
+# QUESTION 1
+print ('QUESTION 1')
+
+# QUESTION 2
+print ('\nQUESTION 2')
+
+# QUESTION 3
+print ('\nQUESTION 3')
