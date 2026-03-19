@@ -107,20 +107,51 @@ print('RGB(' + rgb_combined + ')')
 Write a function list_of_hexa_colors which returns any number of hexadecimal colors in an array (six hexadecimal numbers written after #. Hexadecimal numeral system is made out of 16 symbols, 0-9 and first 6 letters of the alphabet, a-f. Check the task 6 for output examples).
 ### THOUGHT PROCESS
 ```
+My thought process tells me that I can modify Exercise 1 Level 2 to get the desired hexadecimal color output.
+```
+```
+I was close with my own solution, however since I separated the numbers and letters, it shows up the numbers more. Gemini shows me the easy way to get the output.
 ```
 
 ### SOLUTION
 ```python
+print ('QUESTION 1')
+import random
+import string
+def list_of_hexa_colors():
+    chars = "0123456789abcdef"    
+    hexa_code = ''.join(random.choices(chars, k=6))    
+    color = f'#{hexa_code}'
+    print(color)
+    return color
+
+list_of_hexa_colors()
 ```
 
 ## QUESTION 2
 Write a function list_of_rgb_colors which returns any number of RGB colors in an array.
 ### THOUGHT PROCESS
 ```
+This is quite straight forward, to test it, I put the condition to be in a for loop, which prints out 3 different RGB values in an Array.
 ```
 
 ### SOLUTION
 ```python
+print ('\nQUESTION 2')
+from random import randint
+def list_of_rgb_colors():
+    rgb_Array = []
+    r = randint(0, 255)
+    g = randint(0, 255)
+    b = randint(0, 255)
+    for numbers in range(3):
+        rgb_combined = ",".join([str(r), str(g), str(b)])
+        rgb_full = 'RGB(' + str(rgb_combined) + ')'
+        rgb_Array.append(rgb_full)
+
+    print(rgb_Array)
+
+list_of_rgb_colors()
 ```
 
 ## QUESTION 3
@@ -133,10 +164,29 @@ generate_colors('rgb', 1)  # ['rgb(33,79, 176)']
 ```
 ### THOUGHT PROCESS
 ```
+Same here, I can just call the function in Question 1 and Question while having an if statement to check the selected color choice and asking the user how many colors they want to generate to pass into the parameter.
 ```
 
 ### SOLUTION
 ```python
+# QUESTION 3
+print ('\nQUESTION 3')
+color_choice = input("Do you want to generate RGB or Hexa colors (type 'rgb' or 'hexa') \n Answer: ")
+color_amount = input("How many do you want to generate? (1-10) \n Answer:")
+def generate_colors(type_of_color, amount_of_colors):
+    if type_of_color == 'rgb':
+        for numbers in range(int(amount_of_colors)):
+            list_of_rgb_colors()
+    elif type_of_color == 'hexa':
+        for numbers in range(int(amount_of_colors)):
+            list_of_hexa_colors()
+    else:
+        print("Please enter either 'rgb' or 'hexa'")
+
+generate_colors('hexa', 3)
+generate_colors('hexa', 1) 
+generate_colors('rgb', 3)  
+generate_colors('rgb', 1) 
 ```
 
 # EXERCISE LEVEL 3
@@ -144,18 +194,45 @@ generate_colors('rgb', 1)  # ['rgb(33,79, 176)']
 Call your function shuffle_list, it takes a list as a parameter and it returns a shuffled list
 ### THOUGHT PROCESS
 ```
+Current thought process, just use import random. Then maybe randomized the number and add it into a new list.
 ```
-
+```
+Well almost there, but my logic doesnt truly shuffle the items. Now I know there is a random.sample which is really useful in this case.
+```
+```
 ### SOLUTION
 ```python
+# QUESTION 1
+print ('QUESTION 1')
+item_list = [1,2,3,4]
+import random
+def shuffle_list(list_of_item):
+    # k=len(...) tells Python to grab all items from the list in a random order
+    shuffled = random.sample(list_of_item, k=len(list_of_item))
+    return shuffled
+
+# Testing it out
+result = shuffle_list(item_list)
+print(f"Original: {item_list}")
+print(f"Shuffled: {result}")
 ```
 
 ## QUESTION 2
 Write a function which returns an array of seven random numbers in a range of 0-9. All the numbers must be unique.
 ### THOUGHT PROCESS
 ```
+Not much here, fully Gemini
 ```
 
 ### SOLUTION
 ```python
+print ('\nQUESTION 2')
+def generate_unique_numbers():
+    # range(10) gives us numbers 0 through 9
+    # k=7 tells Python we want exactly 7 of them
+    numbers = random.sample(range(10), k=7)
+    return numbers
+
+# Testing the function
+print(generate_unique_numbers())
 ```

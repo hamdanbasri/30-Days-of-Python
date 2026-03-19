@@ -25,7 +25,7 @@ def user_id_gen_by_user():
     for number in range(amount_of_ID):
         characters = string.ascii_lowercase + string.digits    
         user_id = ''.join(random.choices(characters, k=amount_of_characters))
-        print(user_id)
+        print(f'# {user_id}')
     return user_id
 
 user_id_gen_by_user()
