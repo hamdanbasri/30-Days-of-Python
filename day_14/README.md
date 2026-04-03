@@ -12,6 +12,11 @@ numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 Explain the difference between map, filter, and reduce.
 ### THOUGHT PROCESS
 ```
+Map - The map() function is a built-in function that takes a function and iterable as parameters.
+
+Filter - The filter() function calls the specified function which returns boolean for each item of the specified iterable (list). It filters the items that satisfy the filtering criteria.
+
+Reduce - The reduce() function is defined in the functools module and we should import it from this module. Like map and filter it takes two parameters, a function and an iterable. However, it does not return another iterable, instead it returns a single value.
 ```
 
 ### SOLUTION
